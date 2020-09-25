@@ -36,11 +36,11 @@ def nova_transacao(request):
 
 
 def update(request, pk):
-
+    data = {}
     transacao = Transacao.objects.filter(pk=pk)
     form = TransacaoForm(request.POST or None, instance=transacao)
     if form.is_valid():
         form.save()
         return redirect('listagem')
-
-    return render(request)
+    data['form'] = form
+    return render(request, 'form.html', data)
