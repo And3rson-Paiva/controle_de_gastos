@@ -7,6 +7,6 @@ urlpatterns = [
     path('listagem/', listagem, name='listagem'),
     path('nova/', nova_transacao, name='nova'),
     path('update/<int:pk>', update, name='update'),
-    path('delete/<int:pk>', delete, node='delete')
+    path('delete/<int:pk>', delete, name='delete'),
 ]
 
